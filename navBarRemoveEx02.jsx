@@ -2,7 +2,9 @@
 // write out both the name and the number in stock in format apple:2
 function NavBar({ menuitems, minstock }) {
   const updatedList = menuitems.map((item, index) => {
-    return <li key={index}>{item.name}</li>;
+    if (item.instock > minstock) {
+      return <li key={index}>{item.name}:{item.instock}</li>;
+    }
   });
   // note that React needs to have a single Parent
   return <ul style={{ listStyleType: "none" }}>{updatedList}</ul>;
