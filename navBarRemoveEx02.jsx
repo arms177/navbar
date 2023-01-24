@@ -2,7 +2,7 @@
 // write out both the name and the number in stock in format apple:2
 function NavBar({ menuitems, minstock }) {
   const updatedList = menuitems.map((item, index) => {
-    if (item.instock > minstock) {
+    if (item.instock >= minstock) {
       return <li key={index}>{item.name}:{item.instock}</li>;
     }
   });
